@@ -1,0 +1,10 @@
+
+
+.mensagemChatWhatsapi{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: red;
+    width: 200px;
+    height: 400px;
+}

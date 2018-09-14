@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Opçōes da extensão</title>
+
+</head>
+<body>
+<table align="left" border="0" cellpadding="1" cellspacing="1" style="width: 600px;font-size:14px;" summary="techextension click to call extension">
+	<tbody>
+	<tr>
+		<td colspan="2" style="text-align: center; background-color: rgb(255, 204, 102);">
+			<p>
+				<span id="cke_bm_599S" style="display: none;">&nbsp;</span><span style="font-family:courier new,courier,monospace;font-weight: bold;">CONFIGURACOES ELASTIX</span></p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" style="text-align: center; background-color: rgb(255, 255, 255);">
+			&nbsp;</td>
+	</tr>
+	<tr>
+		<td>
+			<span style="font-family:courier new,courier,monospace;"><span id="cke_bm_622S" style="display: none;">&nbsp;</span><span id="cke_bm_623S" style="display: none;">&nbsp;</span>IP Elastix :</span></td>
+		<td>
+			<span style="font-family:courier new,courier,monospace;"><input id="asteriskip" name="asteriskip" placeholder="192.168.1.100" type="text" /></span></td>
+	</tr>
+	<tr>
+		<td>
+			<span style="font-family:courier new,courier,monospace;">Url Elastix:</span></td>
+		<td>
+			<span style="font-family:courier new,courier,monospace;"><input id="techextension_ip" name="techextension_ip" placeholder="http://192.168.1.100" type="text" /></span></td>
+	</tr>
+	<tr id="extension_tab" >
+		<td>
+			<span style="font-family:courier new,courier,monospace;">Numero:</span></td>
+		<td>
+			<span style="font-family:courier new,courier,monospace;"><input id="extension" name="extension" placeholder="100" type="text" /></span></td>
+	</tr>
+	<tr>
+		<td>
+			&nbsp;</td>
+		<td>
+			&nbsp;</td>
+	</tr>
+	<tr>
+		<td>
+			&nbsp;</td>
+		<td>
+			<span style="font-family:courier new,courier,monospace;"><button id="setup" style=" color: black;  background-color: #ffcc66; font-family:courier new,courier,monospace; font-size: 100%;  width:70px; height:30px;">Set Up</button></span></td>
+	</tr>
+
+	<tr id="textension_dailplan_tab" style=" visibility: hidden;">
+		<td>
+			<span style="font-family:courier new,courier,monospace;">Plano de discagem:</span></td>
+		<td>
+			<span style="font-family:courier new,courier,monospace;"><input id="extension_dailplan" name="extension_dailplan" placeholder="from-internal" type="text" /></span></td>
+	</tr>
+	<tr id="techextension_prefix_tab" style=" visibility: hidden;">
+		<td>
+			<span style="font-family:courier new,courier,monospace;">Prefixo:</span>
+		</td>
+		<td>
+					<span style="font-family:courier new,courier,monospace;">
+						<input id="techextension_prefix" name="techextension_prefix" placeholder="8" type="text" />&nbsp;</span>
+		</td>
+	</tr>
+	<tr id="techextension_channel_tab" style=" visibility: hidden;">
+		<td>
+			<span style="font-family:courier new,courier,monospace;">Prefixo:</span>
+		</td>
+		<td>
+					<span style="font-family:courier new,courier,monospace;">
+						<input id="techextension_channel" name="techextension_channel" placeholder="SIP/100" type="text" />&nbsp;</span>
+		</td>
+	</tr>
+	<tr id="techextension_format_tab" style=" visibility: hidden;">
+		<td>
+			<span style="font-family:courier new,courier,monospace;">Formato Numero:</span>
+		</td>
+		<td>
+					<span style="font-family:courier new,courier,monospace;">
+					   <input id="techextension_format" style="width: 300px;" name="techextension_format" placeholder="\d{10}" type="text" />&nbsp;</span>
+			</span>
+		</td>
+	</tr>
+
+	<tr id="techextension_domain_tab" style=" visibility: hidden;">
+		<td>
+			<span style="font-family:courier new,courier,monospace;">Funciona em qual dominio:</span>
+		</td>
+		<td>
+					<span style="font-family:courier new,courier,monospace;">
+					   <input id="techextension_domain" style="width: 300px;" name="techextension_format" placeholder="all" type="text" />&nbsp;</span>
+			</span>
+		</td>
+	</tr>
+
+
+	<tr id="techextension_notification_tab" style=" visibility: hidden;">
+		<td>
+			<span style="font-family:courier new,courier,monospace;">Notificacao desktop:</span>
+		</td>
+		<td>
+					<span style="font-family:courier new,courier,monospace;">
+					    <input id="techextension_notification" type="checkbox" name="techextension_notification" value="yes">
+						</span>
+		</td>
+	</tr>
+	<tr id="techextension_clicktocall_tab" style=" visibility: hidden;">
+		<td>
+			<span style="font-family:courier new,courier,monospace;">Click to Call :</span>
+		</td>
+		<td>
+					<span style="font-family:courier new,courier,monospace;">
+					    <input id="techextension_clicktocall" type="checkbox" name="techextension_clicktocall" value="yes">
+						</span>
+		</td>
+	</tr>
+	<tr id="techextension_addon_ip_tab" style=" visibility: hidden;">
+		<td>
+			<span style="font-family:courier new,courier,monospace;">Add-on IP :</span></td>
+		<td>
+			<span style="font-family:courier new,courier,monospace;"><input id="techextension_addon_ip" name="techextension_addon_ip" placeholder="192.168.1.100" type="text" /></span></td>
+	</tr>
+
+
+	<tr id="techextension_port_tab" style=" visibility: hidden;">
+		<td>
+			<span style="font-family:courier new,courier,monospace;">Porta:</span></td>
+		<td>
+			<span style="font-family:courier new,courier,monospace;"><input id="techextension_port" name="techextension_port" placeholder="9999" type="text" />&nbsp;</span></td>
+	</tr>
+	<tr id="techextension_ssl_port_tab" style=" visibility: hidden;">
+		<td>
+			<span style="font-family:courier new,courier,monospace;">SSL Porta:</span></td>
+
+		<td>
+			<span style="font-family:courier new,courier,monospace;"><input id="techextension_ssl_port" name="techextension_ssl_port" placeholder="7777" type="text" />&nbsp;</span></td>
+	</tr>
+
+
+
+
+
+	<tr>
+		<td>
+			&nbsp;</td>
+		<td>
+			&nbsp;</td>
+	</tr>
+
+	<tr>
+		<td>
+
+		</td>
+		<td>
+			<span style="font-family:courier new,courier,monospace;"><button id="save" style=" color: black;  background-color: #ffcc66; font-family:courier new,courier,monospace; font-size: 100%;  width:70px; height:30px; visibility: hidden;">Salvar</button></span>
+			&nbsp;&nbsp;
+			<span style="font-family:courier new,courier,monospace;"><button id="refresh" style=" color: black;  background-color: #ffcc66; font-family:courier new,courier,monospace; font-size: 100%;  width:100px; height:30px; visibility: hidden;">Atualizar</button></span>
+
+
+			&nbsp;&nbsp;&nbsp; <span style="font-family:courier new,courier,monospace;"><button id="reset" style=" color: black;  background-color: #ffcc66; font-family:courier new,courier,monospace; font-size: 100%;  width:70px; height:30px; visibility: hidden;">Resetar</button></span>
+
+		</td>
+	</tr>
+
+	<tr>
+
+		<td>
+			<a href="http://www.fabiopratta.com.br" target="_blank" style="text-decoration: none;font-weight: bold;">Ajuda e Suporte</a></td>
+		<td>
+			&nbsp;</td>
+
+	</tr>
+	<tr>
+
+
+
+		<td >
+			<a href="http://www.fabiopratta.com.br" target="_blank" style="text-decoration: none;font-weight: bold;"><img src="http://www.fabiopratta.com.br/logo_copy.png" /></a></td>
+
+		</td>
+		<td>
+			&nbsp;</td>
+	</tr>
+	</tbody>
+
+</table>
+<script src="pop.js"></script>
+<div id="status" style="text-align: right;">
+	&nbsp;</div>
+</body>
+</html>

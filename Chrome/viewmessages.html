@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Fabio Pratta <fabiobrotas@hotmail.com>">
+    <title>Mensagens</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/viewmessages.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendor/emogi/css/emoji.css" rel="stylesheet">
+</head>
+<body onunload="saveActivity()" onbeforeunload="saveActivity()">
+<div class="speech-wrapper" id="mensagensEnviadasRecebidas">
+
+</div>
+
+<div id="sendMessagem">
+    <div class="row">
+        <div class="col-md-10">
+            <textarea class="form-control textarea-control" id="messageClient" rows="3" data-emojiable="true"></textarea>
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-success btn-lg btn-block" id="sendClient">Enviar Mensagem</button>
+        </div>
+    </div>
+</div>
+
+</body>
+
+
+<script src="js/jquery.js"></script>
+<script src="vendor/emogi/js/config.js"></script>
+<script src="vendor/emogi/js/util.js"></script>
+<script src="vendor/emogi/js/jquery.emojiarea.js"></script>
+<script src="vendor/emogi/js/emoji-picker.js"></script>
+<script src="js/viewmessages.js"></script>
+</html>

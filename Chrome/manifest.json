@@ -1,0 +1,33 @@
+{
+  "background": {
+    "persistent": true,
+    "scripts": ["js/jquery.js", "js/tinybox.js", "js/loader.js","js/whatsapiconnect.js", "js/whatsapi.js", "background.js" ],
+    "styles": ["css/style.css"]
+  },
+  "browser_action": {
+    "default_icon": "icons/icone.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [ {
+    "all_frames": true,
+    "css": [ "css/style.css", "css/whatsapidialog.css", "css/configpage.css"],
+    "html": [ "options.html" ],
+    "image": [ "icon-phone.png" ],
+    "js": [ "js/configpage.js",  "js/whatsapidialog.js"],
+    "matches": [ "http://*/*", "https://*/*" ]
+  } ],
+  "description": "Integracao do PipeDrive com o WhatsAPP.",
+  "icons": {
+    "128": "icons/icon128.png",
+    "19": "icons/icon19.png",
+    "48": "icons/icon48.png"
+  },
+  //"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhTfouflwgbkeL3RKwT5Noe+V93PHS6thCqeuXH/wFbeEp9oGty+klYx/75SFcGUTJGhKQGtzMXcUHgLRApxi3VcEkaIVht2lvoi7/vZFO+op59mScSty/iG5vV+WGT4zpzX3r1bN6I/1zsb3XTXOyGXR+sm9ae4RqRtflVG/yE0xrbtwnoU3UDtJ0BlHccDBQ3eSk9EAp4nkJAps+YckjobheJrAI6Pd6eqBYqxn45tN4bJOM0hUSMosHymGdc8bqW6/phOyEVSVW0q2y9QuUtmoBQ39122RGWQ01VI47+6blXoa/uy9XbzT8XhPI4qeC+ipDZiyfV2fBN6xpH3A2QIDAQAB",
+  "manifest_version": 2,
+  "name": "WHATSAPP / PIPEDRIVE",
+  "options_page": "options.html",
+  "permissions": [ "contextMenus", "storage", "notifications","tabs" ],
+  "short_name": "WhatsApp - Elastix Modulo",
+  "version": "1",
+  "web_accessible_resources": [ "icons/*.png","icons/*.png", "js/jquery.js", "js/configpage.js", "icons/icone.png" ]
+}

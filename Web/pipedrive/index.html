@@ -1,0 +1,330 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Brotas Eco Resort</title>
+
+<link rel="icon" type="image/png" href="images/favicon.png" />
+<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+        $( function() {
+            $( ".datepicker" ).datepicker({
+                dateFormat: 'dd/mm/yy',
+                dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+                dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+                dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+                monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+                monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+                nextText: 'Próximo',
+                prevText: 'Anterior'
+            });
+        } );
+	</script>
+
+<script>
+
+//================================================== MASCARAS DO TELEFONE
+function mascara(o,f){
+    v_obj=o
+    v_fun=f
+    setTimeout("execmascara()",1);
+}
+function execmascara(){
+    v_obj.value=v_fun(v_obj.value);
+}
+function mtel(v){
+    v=v.replace(/\D/g,"");            
+ 
+    v=v.replace(/(\d)(\d{4})$/,"$1$2");
+    return v;
+}
+function id( el ){
+	return document.getElementById( el );
+}
+window.onload = function(){
+	
+	id('telefone').onkeyup = function(){
+		mascara( this, mtel );
+			id('telefone').onkeyup = function(){
+			mascara( this, mtel );
+		}
+	}
+}
+
+//================================================== PLACEHOLDER
+$(document).ready( function() {
+	
+	$('[placeholder]').focus(function() {
+	  var input = $(this);
+	  if (input.val() == input.attr('placeholder')) {
+  	    input.val('');
+  	    input.removeClass('placeholder');
+	  }
+	}).blur(function() {
+	  var input = $(this);
+	  if (input.val() == '' || input.val() == input.attr('placeholder')) {
+  	    input.addClass('placeholder');
+  	    input.val(input.attr('placeholder'));
+	  }
+	}).blur();	
+
+	
+//========== SUBMIT
+$( "#frm" ).submit(function( event ) {
+
+
+//================================================== VALIDACAO CAMPOS TEXT
+function validaCampo(name,mensagem){
+    name = '[name='+name+']';
+    if($(name).val() == '' || $(name).val() == $(name).attr('placeholder')){
+        alert(mensagem);
+        $(name).focus();
+        return true;
+    }else{
+        return false;
+    }
+
+}
+
+
+//================================================== VALIDACAO SELECT
+function validaSelect(name,mensagem){
+    if($("[name="+name+"]").val() != '') {
+      return false;
+    } else {
+    alert(mensagem);
+    return true;
+    }
+}
+
+
+//================================================== VALIDACAO RADIO
+function validaRadio(name,mensagem){
+    if($("input[name="+name+"]:checked").val()) {
+      return false;
+    } else {
+    alert(mensagem);
+    return true;
+    }
+}
+
+
+//================================================== VALIDACAO EMAIL
+function validaEmail(name,mensagem){
+    name = '[name='+name+']';
+    if($(name).val() == '' || $(name).val() == $(name).attr('placeholder')){
+        alert(mensagem);
+        $(name).focus();
+        return true;
+    }else{
+          var filtro = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+         if(!filtro.test($(name).val())){
+          alert('Email Invalido');
+		  $(name).focus();
+		  $(name).val("");
+            return true;
+         }
+        return false;
+    }
+
+}
+
+
+//================================================== CHAMA AS VALIDACOES AOS ELEMENTOS
+if(validaCampo('nome','Preencha o Campo NOME Corretamente'))
+	return false;
+
+if(validaEmail('email','Preencha o E-MAIL Corretamente'))
+	return false;
+
+if(validaCampo('ddd','Preencha o Campo DDD'))
+	return false;
+
+if(validaCampo('tel','Preencha o Campo TELEFONE'))
+	return false;
+	
+//if(validaSelect('selecao','Selecione alguma OPÇÃO do SELECT'))
+	//return false;
+	  
+//if(validaRadio('radio','Selecione alguma OPÇÃO do RADIO'))
+	//return false;
+
+
+//================================================== PLACEHOLDER
+$(this).find('[placeholder]').each(function() {
+	var input = $(this);
+		if (input.val() == input.attr('placeholder')) {
+		input.val('');
+	}
+});
+
+
+});
+
+
+});
+
+/**/
+
+$( document ).ready(function() {
+	  $("#totop").click(function() {
+		 $('html, body').animate({
+		  scrollTop: $("#ancora").offset().top
+		 }, 1000);
+	  });
+	});
+
+</script>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+     
+     ga('create', 'UA-102028754-2', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '228553114161354');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=228553114161354&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+</head>
+
+<body>
+
+<noscript>
+	<div  id="noscript">Aten&ccedil;&atilde;o o <b>"Javascript"</b> de seu navegador est&aacute; desabilitado <b>"ERROS"</b> poder&atilde;o acontecer.</div>
+</noscript>
+
+<header>
+	<div class="container">
+		<img class="logo" src="images/logo.png" alt="Brotas Eco Resort" title="Brotas Eco Resort">
+		<div class="contato">
+
+		</div>
+	</div>
+</header>
+
+<div class="banner">
+	<div class="container">
+		<div class="chamada">
+			<h2>Brotas Eco Resort</h2>
+			<div class="linha"></div>
+			<p>Contando com clima privilegiado, praticamente sol o ano inteiro, o Brotas Eco Resort esta localizado na cidade de Brotas, interior do estado de São Paulo a 220 km da Capital.</p>
+		</div>
+		<div class="cerca-formulario" style="z-index: 9999999; margin-top: -370px; height: 500px;">
+			<span id="ancora"></span>
+			<p>Faça sua Cotação</p>
+			<form action="confirmacontato.php" method="post">
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<input type="text" class="campo" name="nome" id="nome" placeholder="Nome:" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<input type="email" class="campo" name="email" id="email" placeholder="Email:" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<input type="text" class="campo" size="11" maxlength="11" name="telefone" id="telefone" placeholder="Telefone:" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<input type="number" class="campo" name="adulto" id="adulto" placeholder="Adultos:" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<input type="number" class="campo" name="crianca" id="crianca" placeholder="Crianças:" required>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-3 mb-3">
+						<input type="text" class="campo datepicker" name="checkin" placeholder="Check-In:" id="checkin" required>
+					</div>
+					<div class="col-md-3 mb-3">
+						<input type="text" class="campo datepicker" name="checkout" placeholder="Check-Out:" id="checkout" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<textarea class="campo-msg" id="mensagem" name="mensagem" placeholder="Mensagem:" rows="3"></textarea>
+					</div>
+				</div>
+				<button class="botao" type="submit">Enviar</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="main">
+	<div class="container">
+	
+		<div class="sessao">
+			<div class="bloco left">
+				<div class="triangulo"></div>
+				<h3>Gastronomia</h3>
+				<div class="linha"></div>
+				<p>O Restaurante conta com cardápios variados oferecendo comida típica da fazenda. Você vai se deliciar com saladas, pratos quentes, e com o buffet de doces caseiros, frutas, compotas e queijos feitos na próprio local. Jantares Temáticos.</p>
+			</div>
+			<div class="imagem right">
+				<img src="images/gastronomia.jpg" alt="Gastronomia" title="Gastronomia">
+			</div>
+		</div>
+	
+		<div class="sessao">
+			<div class="bloco right">
+				<div class="triangulo"></div>
+				<h3>Acomodações</h3>
+				<div class="linha"></div>
+				<p>Apartamentos são muito bem equipados: Com cama box, ar-condicionado Split, TV LCD, frigobar, circuito interno de TV, wi-fi gratuito, cofre privativo onde deverão ser guardados os pertences, com espaço inclusive para laptop etc.</p>
+			</div>
+			<div class="imagem left">
+				<img src="images/acomodacoes.jpg" alt="Acomodações" title="Acomodações">
+			</div>
+		</div>
+	
+		<div class="sessao">
+			<div class="bloco left">
+				<div class="triangulo"></div>
+				<h3>Lazer</h3>
+				<div class="linha"></div>
+				<p>Uma estrutura completa com diversas atrações. Parque Aquático; Jacuzi; Brinquedoteca; Sala de massagem; Sauna; Paintball; Fazendinha são só algumas delas. Perfeito para você e sua família viverem dias de muita alegria e descanso.</p>
+			</div>
+			<div class="imagem right">
+				<img src="images/lazer.jpg" alt="Lazer" title="Lazer">
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<footer>
+	<div class="container">
+		<a id="totop">Entre em contato conosco</a>
+	</div>
+</footer>
+
+</body>
+</html>
